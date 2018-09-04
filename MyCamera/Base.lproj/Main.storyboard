@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2tU-1t-1op">
+                                <rect key="frame" x="16" y="20" width="343" height="557"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFG-yI-0F8">
+                                <rect key="frame" x="16" y="607" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AFc-GW-1So"/>
+                                </constraints>
+                                <state key="normal" title="カメラを起動する">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C1j-aO-q1y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OFG-yI-0F8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0lU-ua-ksw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OFG-yI-0F8" secondAttribute="bottom" constant="30" id="2Vy-nj-Guj"/>
+                            <constraint firstItem="2tU-1t-1op" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Vh-gt-DMp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2tU-1t-1op" secondAttribute="trailing" constant="16" id="bJM-mo-iW6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OFG-yI-0F8" secondAttribute="trailing" constant="16" id="m3t-Vn-Ygn"/>
+                            <constraint firstItem="OFG-yI-0F8" firstAttribute="top" secondItem="2tU-1t-1op" secondAttribute="bottom" constant="30" id="mcr-nV-TEf"/>
+                            <constraint firstItem="2tU-1t-1op" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="o6N-mr-C2X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pictureImage" destination="2tU-1t-1op" id="DDL-uZ-9jt"/>
+                        <segue destination="79y-zV-WWv" kind="show" identifier="showEffectView" id="a3x-Za-6gp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
+        </scene>
+        <!--Effect View Controller-->
+        <scene sceneID="Zha-IT-Rkc">
+            <objects>
+                <viewController id="79y-zV-WWv" customClass="EffectViewController" customModule="MyCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sf3-Hc-PJm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="plx-II-erX">
+                                <rect key="frame" x="16" y="20" width="343" height="437"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-0o-yy3">
+                                <rect key="frame" x="16" y="487" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BQM-C6-Ukx"/>
+                                </constraints>
+                                <state key="normal" title="エフェクト">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="effectButtonAction:" destination="79y-zV-WWv" eventType="touchUpInside" id="GQM-re-5dW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLO-Kf-nM3">
+                                <rect key="frame" x="16" y="547" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Uyw-te-Cvk"/>
+                                </constraints>
+                                <state key="normal" title="シェア">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonAction:" destination="79y-zV-WWv" eventType="touchUpInside" id="T8C-TR-aOh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRo-F1-3Zz">
+                                <rect key="frame" x="16" y="607" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cag-FC-OGP"/>
+                                </constraints>
+                                <state key="normal" title="閉じる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="79y-zV-WWv" eventType="touchUpInside" id="N58-EW-HyV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J4O-0o-yy3" firstAttribute="top" secondItem="plx-II-erX" secondAttribute="bottom" constant="30" id="68F-4c-f6u"/>
+                            <constraint firstItem="skm-bj-FQL" firstAttribute="trailing" secondItem="J4O-0o-yy3" secondAttribute="trailing" constant="16" id="8gU-zY-TE5"/>
+                            <constraint firstItem="skm-bj-FQL" firstAttribute="trailing" secondItem="DRo-F1-3Zz" secondAttribute="trailing" constant="16" id="DEp-Aj-SA9"/>
+                            <constraint firstItem="skm-bj-FQL" firstAttribute="bottom" secondItem="DRo-F1-3Zz" secondAttribute="bottom" constant="30" id="Ieo-j3-fZe"/>
+                            <constraint firstItem="J4O-0o-yy3" firstAttribute="leading" secondItem="skm-bj-FQL" secondAttribute="leading" constant="16" id="OST-4I-Qbc"/>
+                            <constraint firstItem="skm-bj-FQL" firstAttribute="trailing" secondItem="HLO-Kf-nM3" secondAttribute="trailing" constant="16" id="Oph-N0-sVt"/>
+                            <constraint firstItem="plx-II-erX" firstAttribute="leading" secondItem="skm-bj-FQL" secondAttribute="leading" constant="16" id="PG1-uo-aqB"/>
+                            <constraint firstItem="DRo-F1-3Zz" firstAttribute="leading" secondItem="skm-bj-FQL" secondAttribute="leading" constant="16" id="Vt0-qS-Jgj"/>
+                            <constraint firstItem="HLO-Kf-nM3" firstAttribute="top" secondItem="J4O-0o-yy3" secondAttribute="bottom" constant="30" id="Z9R-W5-yz4"/>
+                            <constraint firstItem="DRo-F1-3Zz" firstAttribute="top" secondItem="HLO-Kf-nM3" secondAttribute="bottom" constant="30" id="aFD-jH-zLf"/>
+                            <constraint firstItem="skm-bj-FQL" firstAttribute="trailing" secondItem="plx-II-erX" secondAttribute="trailing" constant="16" id="bsE-gZ-fws"/>
+                            <constraint firstItem="HLO-Kf-nM3" firstAttribute="leading" secondItem="skm-bj-FQL" secondAttribute="leading" constant="16" id="ddz-uJ-Z2B"/>
+                            <constraint firstItem="plx-II-erX" firstAttribute="top" secondItem="skm-bj-FQL" secondAttribute="top" id="dwV-az-NZE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="skm-bj-FQL"/>
+                    </view>
+                    <connections>
+                        <outlet property="effectImage" destination="plx-II-erX" id="TSG-l5-SkD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o5D-vp-08B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805.60000000000002" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
